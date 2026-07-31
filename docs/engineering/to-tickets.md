@@ -54,7 +54,8 @@ Real and Local Markdown tickets carry the same public sections: Parent, What to 
 `to-tickets` is a step in the main build chain:
 
 ```txt
-grill-with-docs → to-spec → to-tickets → implement → code-review
+grill-with-docs → to-spec → to-tickets → coordinate-delivery → review
+                                      └→ implement (explicit standalone) → code-review
 ```
 
 It sits between [to-spec](https://aihero.dev/skills-to-spec), which supplies settled solution authority, and configured `/coordinate-delivery <ticket reference>` execution. [implement](https://aihero.dev/skills-implement) remains available for explicitly authorized standalone work. Work the frontier one ticket per fresh context. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
