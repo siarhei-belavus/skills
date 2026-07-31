@@ -34,7 +34,7 @@ Coordinator-narrowed mode is deliberately smaller. It validates the supplied wor
 
 ## It's working if
 
-- Every changed repository has its own fixed review base, exact local head, focused commits, and validation evidence.
+- Every changed repository has its own fixed review base, exact local head, focused commits, clean delivery state, and validation evidence.
 - A changed head invalidates its earlier validation and Standards evidence.
 - A narrowed assignment returns one repository result and performs no review, publication, Review Proposal, or Work Tracker mutation.
 - A standalone multi-repository assignment ends with repository-local Standards review and one whole-bundle Spec review.

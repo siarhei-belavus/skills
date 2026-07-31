@@ -24,7 +24,9 @@ Reach for it when you have one or more known-good fixed points and exact heads t
 
 ## Prerequisites
 
-Each target needs a Repository ID, repository path, fixed point, exact review head, authoritative sources, and settled seams. Supply repository validation evidence when acceptance depends on it. The single-repository shorthand still accepts the familiar current repository plus fixed point.
+An explicit multi-repository target records a Repository ID, repository path, fixed point, exact review head, authoritative sources, and relevant settled seams. The single-repository shorthand still accepts the familiar current repository plus fixed point; the skill can discover its sources and seam context, asking only when the selected Spec axis has no authority. Supply repository validation evidence when acceptance depends on it.
+
+An explicit WIP target also records an immutable SHA-256 digest of the captured tracked, staged, and untracked content. If that snapshot changes without changing `HEAD`, the review is still stale.
 
 ## Repository Standards, bundle Spec
 
