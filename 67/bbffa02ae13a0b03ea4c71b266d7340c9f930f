@@ -1,0 +1,25 @@
+docs/engineering/domain-modeling.md
+  s_ea31d5fa5bbfa0::t_9836e88a3140b2 15,27,33-34,40
+skills/engineering/grill-with-docs/SKILL.md
+  s_ea31d5fa5bbfa0::t_9836e88a3140b2 3
+docs/engineering/grill-with-docs.md
+  s_ea31d5fa5bbfa0::t_9836e88a3140b2 15,17,27,33,38,50
+skills/engineering/ask-matt/SKILL.md
+  s_ea31d5fa5bbfa0::t_9836e88a3140b2 17,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "67bbffa02ae13a0b03ea4c71b266d7340c9f930f",
+  "prompts": {},
+  "sessions": {
+    "s_ea31d5fa5bbfa0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb7f5-3496-72f2-9d22-d1cbdd106e83",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Siarhei Belavus <Siarhei_Belavus@epam.com>"
+    }
+  }
+}
