@@ -26,11 +26,11 @@ Reach for it when you have one or more known-good fixed points and exact heads t
 
 An explicit multi-repository target records a Repository ID, repository path, fixed point, exact review head, authoritative sources, and relevant settled seams. The single-repository shorthand still accepts the familiar current repository plus fixed point; the skill can discover its sources and seam context, asking only when the selected Spec axis has no authority. Supply repository validation evidence when acceptance depends on it.
 
-An explicit WIP target also records an immutable Git tree object ID captured through a temporary index. If that snapshot changes without changing `HEAD`, the review is still stale. When the single-repository shorthand encounters a dirty worktree without an explicit mode, it asks whether those changes belong to the review before selecting the committed or WIP target.
+An explicit WIP target also records an immutable Git tree object ID captured through a temporary index and temporary object store outside the reviewed repository. Its validation evidence is bound to both that snapshot and `HEAD`. If either changes, the review is stale. When the single-repository shorthand encounters a dirty worktree without an explicit mode, it asks whether those changes belong to the review before selecting the committed or WIP target.
 
 ## Repository Standards, bundle Spec
 
-The two axes stay independent. Standards uses one fresh reviewer per selected repository with that repository's instructions, standards, and Fowler smell baseline. Spec uses one fresh Bundle Spec Reviewer with every selected diff, authoritative source, settled seam, and relevant validation result. Findings remain separated so success on one axis cannot mask failure on the other.
+The two axes stay independent. Standards uses one fresh reviewer per selected repository with that repository's instructions, standards, and Fowler smell baseline. Spec uses one fresh Bundle Spec Reviewer with every selected diff, authoritative source, settled seam, and relevant validation result. The result includes only selected axes; when both run, their findings remain separated so success on one axis cannot mask failure on the other.
 
 Review is read-only. The skill reports findings and evidence; it does not publish branches, create or update Review Proposals, or change Work Tracker state.
 
