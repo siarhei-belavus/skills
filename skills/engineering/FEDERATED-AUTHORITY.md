@@ -86,3 +86,20 @@ Cross-Repository Seams contains each seam the ticket creates, changes, or materi
 Dependencies use the Work Tracker's native blocking relationship when available and its configured fallback otherwise. Apply the configured `ready-for-agent` Routing Label only after the complete executable contract exists and all blockers and labels are represented consistently.
 
 Portable repository descriptors, Repository-qualified Context Pointers, canonical artifact pointers, and settled seam locations are durable contract fields, not stale implementation-path guidance.
+
+## Executable Agent Brief contract
+
+An Agent Brief is a durable Work Tracker comment with these sections in order:
+
+1. What to build
+2. Acceptance criteria
+3. Repository References
+4. Repository Scope
+5. Context Scope
+6. Cross-Repository Seams
+7. Out of scope
+8. Blocked by
+
+It follows the same Repository Reference, writable Repository Scope, Context Scope, full-fidelity decision, seam, validation, and dependency rules as an executable delivery ticket. Current behavior, desired behavior, and durable key-interface guidance belong inside What to build rather than becoming duplicate top-level contract sections.
+
+The mapped `ready-for-agent` Routing Label asserts that this complete executable Agent Brief already exists. A direct maintainer state override can skip discovery or grilling, but it cannot skip or weaken the brief. Post and re-read the complete brief before applying the label. If source authority is insufficient to write it without invention, keep the item out of `ready-for-agent` and route the missing decisions or information explicitly.
