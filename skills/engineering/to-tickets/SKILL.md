@@ -1,6 +1,6 @@
 ---
 name: to-tickets
-description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in a local file, or native blocking links on a real tracker.
+description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in one file per ticket locally, or native blocking links on a real tracker.
 disable-model-invocation: true
 ---
 
@@ -31,6 +31,7 @@ Break the work into **tracer bullet** tickets.
 - Each slice cuts a narrow but COMPLETE path through every layer (schema, API, UI, tests) — vertical, NOT a horizontal slice of one layer
 - A completed slice is demoable or verifiable on its own
 - Each slice is sized to fit in a single fresh context window
+- Carry every source Testing Decision relevant to the slice, including its settled seams, selected test approaches, and nearest prior art
 - Any prefactoring should be done first
 
 </vertical-slice-rules>
@@ -46,7 +47,7 @@ For each proposed slice, derive the complete executable contract from its source
 
 Do not introduce a repository, context, seam, validation approach, or decision absent from the source. If a material contract field is missing or unsettled, return to clarification or planning instead of publishing the ticket.
 
-**Wide refactors are the exception to vertical slicing.** A **wide refactor** is one mechanical change — rename a column, retype a shared symbol — whose **blast radius** fans across the whole codebase, so a single edit breaks thousands of call sites at once and no vertical slice can land green. Don't force it into a tracer bullet; sequence it as **expand–contract**. First expand: add the new form beside the old so nothing breaks. Then migrate the call sites over in batches sized by blast radius (per package, per directory), each batch its own ticket blocked by the expand, keeping CI green batch to batch because the old form still exists. Finally contract: delete the old form once no caller remains, in a ticket blocked by every migrate batch. When even the batches can't stay green alone, keep the sequence but let them share an integration branch that all block a final integrate-and-verify ticket — green is promised only there.
+**Wide refactors are the exception to vertical slicing.** A **wide refactor** is one mechanical change — rename a column, retype a shared symbol — whose **blast radius** fans across the whole codebase, so no independently green vertical slice can contain it. Sequence the migration as a coordinated cutover: divide mechanical work into batches sized by blast radius (per package, per directory) on an integration branch, then block one final integrate-and-verify ticket on every batch. Individual batches may be temporarily red; the final ticket establishes the single new form and restores green CI. Carry an old and new form together only when the source specification explicitly records approved external compatibility and its removal condition.
 
 ### 4. Quiz the user
 
@@ -69,65 +70,57 @@ Iterate until the user approves the breakdown.
 
 Publish the approved tickets. **How** depends on the tracker `/setup-matt-pocock-skills` configured — the tickets are the same either way, only the shape of the blocking edges changes:
 
-- **Local Markdown** → write one `tickets.md` in the repository root, all tickets in dependency order (blockers first), with the same complete semantic sections as real Work Tracker tickets.
+- **Local Markdown** → write one file per ticket under `.scratch/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01` in dependency order (blockers first). Each file carries the same complete semantic sections as a real Work Tracker ticket; its Blocked by section names the numbers/titles it depends on.
 - **Configured Work Tracker** → publish one item per ticket in dependency order (blockers first) so each ticket's blocking edges can reference durable identifiers. Use the configured native blocking/sub-item relationship where available and its documented fallback otherwise. Apply the mapped `ready-for-agent` Routing Label only after re-reading the resulting item and verifying its complete executable contract and state.
 
 Do NOT close or modify any parent issue.
 
-<tickets-file-template>
+<local-ticket-template>
 
-# Tickets: <short name of the work>
+# <NN> — <Ticket title>
 
-A one-line summary of what these tickets build. Reference the source spec if there is one.
+**Status:** ready-for-agent
 
-Work the **frontier**: any ticket whose blockers are all done. For a purely linear chain that means top to bottom.
-
-## <Ticket title>
-
-### Parent
+## Parent
 
 <source specification or planning artifact, or `None — <reason>`>
 
-### What to build
+## What to build
 
 <the end-to-end behaviour this ticket makes work, from the user's perspective — not a layer-by-layer implementation list>
 
-### Acceptance criteria
+## Acceptance criteria
 
 - [ ] Acceptance criterion 1
 - [ ] Acceptance criterion 2
 
-### Repository References
+## Repository References
 
 | Repository ID | Remote | Base Branch |
 | --- | --- | --- |
 | `<id>` | `<remote>` | `<branch>` |
 
-### Repository Scope
+## Repository Scope
 
 - `<writable Repository ID>`
   - Required outcome: <repository-owned result>
   - Repository-local settled seams: <complete applicable seam records, or `None — <reason>`>
   - Repository-owned validation obligations: <commands, methods, and evidence>
 
-### Context Scope
+## Context Scope
 
 - `<Repository ID>:<repo-relative canonical context path>`
 - <complete relevant Domain Model Deltas with provenance and documentation obligations>
 
-### Cross-Repository Seams
+## Cross-Repository Seams
 
 <complete applicable seam records and validation obligations, or `None — <reason>`>
 
-### Blocked by
+## Blocked by
 
 <titles of blocking tickets, or `None — can start immediately`>
 
-## <Ticket title>
-
-...
-
-</tickets-file-template>
+</local-ticket-template>
 
 <issue-template>
 

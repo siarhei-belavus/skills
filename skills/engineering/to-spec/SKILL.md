@@ -14,9 +14,9 @@ Read the shared [federated planning authority contract](../FEDERATED-AUTHORITY.m
 
 2. Materialize the complete solution-level Repository References and Context Scope already established by discovery or planning. Bounded source validation is allowed; do not begin new open-ended discovery. Return unresolved material questions to discovery or planning.
 
-3. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
+3. Sketch out the complete set of seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
 
-Check with the user that these seams match their expectations.
+When materially different caller-facing ownership, interface, seam, or contract choices remain possible, run `/codebase-design` before proposing the set. For each seam, propose the smallest faithful repository-native test approach and its nearest prior art. Check with the user that the complete seam set and proposed approaches match their expectations; the confirmed records are settled.
 
 4. Record every confirmed repository-local and cross-repository seam only in Testing Decisions, using the complete fields from the shared contract. Preserve full-fidelity Domain Model Deltas, architecture rationale, provenance, and canonical documentation obligations in Context Scope and the applicable decisions.
 
@@ -57,7 +57,7 @@ The complete relevant set of Repository-qualified Context Pointers, plus every a
 A list of implementation decisions that were made. This can include:
 
 - The modules that will be built/modified
-- The interfaces of those modules that will be modified
+- The interfaces of those modules that will be built/modified
 - Technical clarifications from the developer
 - Architectural decisions
 - Schema changes
