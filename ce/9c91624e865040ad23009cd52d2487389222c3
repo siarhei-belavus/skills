@@ -1,0 +1,37 @@
+docs/engineering/wayfinder.md
+  s_ea31d5fa5bbfa0::t_5108eb54a1298d 29,38
+  s_ea31d5fa5bbfa0::t_1a7f5a6fff9a9e 15,25,33,39-40
+docs/engineering/triage.md
+  s_ea31d5fa5bbfa0::t_5108eb54a1298d 35
+  s_ea31d5fa5bbfa0::t_0f52b4daa94f6f 15,17,23,27,29,31,41-42,47
+docs/engineering/to-spec.md
+  s_ea31d5fa5bbfa0::t_90eaf36705c340 15,27,34-37,50,52
+skills/engineering/wayfinder/SKILL.md
+  s_ea31d5fa5bbfa0::t_7673196e9ff6cd 41,83,126
+  s_ea31d5fa5bbfa0::t_be4a59a038980d 89,127,136-137
+README.md
+  s_ea31d5fa5bbfa0::t_ad191b41782d76 153-154,157-158,160,168
+skills/engineering/README.md
+  s_ea31d5fa5bbfa0::t_ad191b41782d76 10-11,14-16,27
+docs/engineering/to-tickets.md
+  s_ea31d5fa5bbfa0::t_acc5f4d16392a9 15,27,33-34,48-50,60
+  s_ea31d5fa5bbfa0::t_5108eb54a1298d 23
+  s_ea31d5fa5bbfa0::t_1cff20018443cc 46
+  s_ea31d5fa5bbfa0::t_9da45ece813e78 47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "ce9c91624e865040ad23009cd52d2487389222c3",
+  "prompts": {},
+  "sessions": {
+    "s_ea31d5fa5bbfa0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb7f5-3496-72f2-9d22-d1cbdd106e83",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Siarhei Belavus <Siarhei_Belavus@epam.com>"
+    }
+  }
+}
