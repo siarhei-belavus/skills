@@ -14,7 +14,7 @@ npx skills update implement
 
 `implement` builds one or more authorized Repository Deliveries from a spec or tickets. It records an exact review base for every repository, drives each settled seam through test-driven development, commits focused work, runs repository-owned validation, and returns evidence bound to exact local heads.
 
-The defining constraint is authority. A standalone invocation may own the ticket's complete one-to-many Repository Scope, while a Coordinator-narrowed invocation may change exactly one named Repository Scope entry in one supplied Execution Worktree. The narrowed form cannot start reviewers, publish, or change tracker state.
+Authority shapes the run: a standalone invocation may own the ticket's complete one-to-many Repository Scope, while a Coordinator-narrowed invocation may change exactly one named Repository Scope entry in one supplied Execution Worktree. The narrowed form cannot start reviewers, publish, or change tracker state.
 
 ## When to reach for it
 

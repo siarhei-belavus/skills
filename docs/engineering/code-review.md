@@ -14,7 +14,7 @@ npx skills update code-review
 
 `code-review` reviews one or more fixed Repository Targets. It can run the **Standards** axis, the **Spec** axis, or both: Standards produces one repository-local result per target, while Spec produces one result for the complete Delivery Bundle.
 
-The defining constraint is evidence freshness. Every result is bound to exact review heads; when an influencing head changes, its repository validation and Standards result become stale, along with any bundle Spec result that used it.
+Every result stays bound to exact review state. When an influencing head or WIP snapshot changes, its repository validation and Standards result become stale, along with any bundle Spec result that used it.
 
 ## When to reach for it
 
@@ -26,7 +26,7 @@ Reach for it when you have one or more known-good fixed points and exact heads t
 
 An explicit multi-repository target records a Repository ID, repository path, fixed point, exact review head, authoritative sources, and relevant settled seams. The single-repository shorthand still accepts the familiar current repository plus fixed point; the skill can discover its sources and seam context, asking only when the selected Spec axis has no authority. Supply repository validation evidence when acceptance depends on it.
 
-An explicit WIP target also records an immutable SHA-256 digest of the captured tracked, staged, and untracked content. If that snapshot changes without changing `HEAD`, the review is still stale.
+An explicit WIP target also records an immutable Git tree object ID captured through a temporary index. If that snapshot changes without changing `HEAD`, the review is still stale. When the single-repository shorthand encounters a dirty worktree without an explicit mode, it asks whether those changes belong to the review before selecting the committed or WIP target.
 
 ## Repository Standards, bundle Spec
 
