@@ -1,0 +1,29 @@
+docs/engineering/implement.md
+  s_f02de5e71993b0::t_d3b3156ad97f11 15,17,23,25,27,29-40,44,50
+README.md
+  s_f02de5e71993b0::t_d3b3156ad97f11 159,170
+skills/engineering/README.md
+  s_f02de5e71993b0::t_d3b3156ad97f11 16,30
+docs/engineering/ask-matt.md
+  s_f02de5e71993b0::t_d3b3156ad97f11 27
+skills/engineering/ask-matt/SKILL.md
+  s_f02de5e71993b0::t_d3b3156ad97f11 26
+docs/engineering/code-review.md
+  s_f02de5e71993b0::t_d3b3156ad97f11 15-17,21,23,27,29,31,33,37-41,51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "5b8b263149a361585b91f5a3959da9907694f176",
+  "prompts": {},
+  "sessions": {
+    "s_f02de5e71993b0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb7f6-408d-7ed0-bef7-af42c1b3f7f2",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Siarhei Belavus <Siarhei_Belavus@epam.com>"
+    }
+  }
+}
