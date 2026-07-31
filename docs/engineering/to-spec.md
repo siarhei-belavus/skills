@@ -12,7 +12,7 @@ npx skills update to-spec
 
 ## What it does
 
-`to-spec` turns the current conversation and your codebase understanding into a spec (you may know this document as a PRD), then publishes it to your issue tracker.
+`to-spec` turns settled conversation and codebase understanding into a solution-level specification, then publishes it to the configured Work Tracker.
 
 It does **not** interview you again. By the time you reach for it, the alignment work is done — `to-spec` synthesises what is already known rather than asking a fresh round of questions.
 
@@ -24,15 +24,17 @@ Reach for it once a change has been talked through and the domain language is se
 
 ## Prerequisites
 
-`to-spec` publishes into your issue tracker, so [setup-matt-pocock-skills](https://aihero.dev/skills-setup-matt-pocock-skills) must have configured the tracker and triage labels for this repo first. It applies the `ready-for-agent` label itself — no separate triage pass needed.
+`to-spec` uses the repository's configured Work Tracker and Domain Orientation when present. The applicable setup skill must establish those bindings first. A specification is planning authority, not an executable delivery ticket, so publication alone does not apply an execution Routing Label.
 
 ## What the spec includes
 
 - **Problem statement** — what is broken or missing, and why it's worth solving, in the project's own vocabulary.
 - **Solution** — the shape of the fix at a high level, before any implementation detail.
 - **User stories** — an extensive, numbered list of the concrete behaviours the change must support, each one independently checkable.
-- **Implementation decisions** — the choices already settled during the conversation, so they aren't relitigated later.
-- **Testing decisions** — the seams the feature will be tested at, and what "done" looks like.
+- **Repository References** — every confirmed solution-level repository, identified by Repository ID, remote, and Base Branch without granting write authority.
+- **Context Scope** — the complete relevant canonical context set and full-fidelity accepted Domain Model Deltas with provenance and documentation obligations.
+- **Implementation decisions** — the choices already settled during the conversation, with repository owners named so they aren't relitigated later.
+- **Testing decisions** — the sole owner of every repository-local and cross-repository settled seam, validation obligation, selected test approach, and nearest prior art.
 - **Out-of-scope items** — what this change deliberately does *not* cover, to keep the ticket bounded.
 - **Further notes** — anything else worth carrying forward that doesn't fit the sections above.
 
@@ -45,8 +47,9 @@ That matters for agentic development: a good interface gives tests something dur
 ## It's working if
 
 - It starts writing the spec instead of asking you a fresh round of questions.
-- It checks the seams with you before writing, and proposes as few as possible.
+- It checks the complete seam set and repository-native test approaches with you before writing.
 - The spec comes back in your project's domain vocabulary, not generic boilerplate.
+- The spec contains complete Repository References and Context Scope, but no writable Repository Scope or duplicate Cross-Repository Seams section.
 
 ## Where it fits
 
@@ -57,4 +60,3 @@ grill-with-docs → to-spec → to-tickets → implement → code-review
 ```
 
 Reach for it after the plan and domain language are resolved, and before you break the work into implementation tickets. Its key neighbours are [grill-with-docs](https://aihero.dev/skills-grill-with-docs), which sharpens the context so the spec is precise, and [to-tickets](https://aihero.dev/skills-to-tickets), which turns the spec into a set of tickets for [implement](https://aihero.dev/skills-implement) to build. When you're unsure which skill or flow fits, [ask-matt](https://aihero.dev/skills-ask-matt) routes you.
-</content>
