@@ -1,0 +1,25 @@
+skills/engineering/FEDERATED-AUTHORITY.md
+  s_ea31d5fa5bbfa0::t_ab446e9a190de9 89-105
+skills/engineering/triage/AGENT-BRIEF.md
+  s_ea31d5fa5bbfa0::t_edfc42ed3b01ae 3,5,11,13-15,19,21,23,25,28-29,34,37,40,43,45,47-48,50,52-54,56,58-61,63,65-66,68,70,72,74-75,77,79-80,82,84,86,88-94,96
+skills/engineering/triage/SKILL.md
+  s_ea31d5fa5bbfa0::t_3da26c21f9197b 45
+  s_ea31d5fa5bbfa0::t_ab446e9a190de9 3,9,13,41,43,70,79,88-89,92
+  s_ea31d5fa5bbfa0::t_0de2defb105ce2 11,39,52,58,64,68,74,76,114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "944c4b9ab0b32b8c7a5e9f83bce9726226e3a433",
+  "prompts": {},
+  "sessions": {
+    "s_ea31d5fa5bbfa0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb7f5-3496-72f2-9d22-d1cbdd106e83",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Siarhei Belavus <Siarhei_Belavus@epam.com>"
+    }
+  }
+}

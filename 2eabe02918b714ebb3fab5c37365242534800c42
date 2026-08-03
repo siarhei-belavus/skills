@@ -1,0 +1,26 @@
+skills/engineering/setup-matt-pocock-skills/domain.md
+  s_ea31d5fa5bbfa0::t_c44bf4fc7279bb 11
+docs/productivity/grilling.md
+  s_ea31d5fa5bbfa0::t_c44bf4fc7279bb 23
+skills/engineering/ask-matt/SKILL.md
+  s_ea31d5fa5bbfa0::t_a50e758b64662a 23
+  s_ea31d5fa5bbfa0::t_c44bf4fc7279bb 56
+docs/productivity/grill-me.md
+  s_ea31d5fa5bbfa0::t_c44bf4fc7279bb 23,29,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "2eabe02918b714ebb3fab5c37365242534800c42",
+  "prompts": {},
+  "sessions": {
+    "s_ea31d5fa5bbfa0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fb7f5-3496-72f2-9d22-d1cbdd106e83",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Siarhei Belavus <Siarhei_Belavus@epam.com>"
+    }
+  }
+}
